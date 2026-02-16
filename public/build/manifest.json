@@ -1,0 +1,41 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-axT-XFn6.css",
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "name": "app",
+    "names": [
+      "app.css"
+    ]
+  },
+  "resources/font/Amiko-Regular.woff": {
+    "file": "assets/Amiko-Regular-SBhTkzSZ.woff",
+    "src": "resources/font/Amiko-Regular.woff"
+  },
+  "resources/font/Amiko-Regular.woff2": {
+    "file": "assets/Amiko-Regular-h2EK0Xz6.woff2",
+    "src": "resources/font/Amiko-Regular.woff2"
+  },
+  "resources/font/Amiko-SemiBold.woff": {
+    "file": "assets/Amiko-SemiBold-yr4sqcOy.woff",
+    "src": "resources/font/Amiko-SemiBold.woff"
+  },
+  "resources/font/Amiko-SemiBold.woff2": {
+    "file": "assets/Amiko-SemiBold-j66JKLA8.woff2",
+    "src": "resources/font/Amiko-SemiBold.woff2"
+  },
+  "resources/font/Belleza-Regular.woff": {
+    "file": "assets/Belleza-Regular-DVIk7lKl.woff",
+    "src": "resources/font/Belleza-Regular.woff"
+  },
+  "resources/font/Belleza-Regular.woff2": {
+    "file": "assets/Belleza-Regular-Dlj8cG_T.woff2",
+    "src": "resources/font/Belleza-Regular.woff2"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-CBbTb_k3.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  }
+}
