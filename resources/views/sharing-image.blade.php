@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ $album->title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    @vite(['resources/css/app.css','resources/js/app.js'])
+</head>
+
+<body class="bg-white text-gray-900">
+
+{{-- ================= HERO SECTION ================= --}}
+<section class="relative h-screen w-full overflow-hidden">
+
+    {{-- Background --}}
+    @if($album->hero_image)
+        <img src="{{ asset('storage/'.$album->hero_image) }}"
+             class="absolute inset-0 h-full w-full object-cover"
+             alt="">
+    @endif
+
+    {{-- Dark overlay --}}
+    <div class="absolute inset-0 bg-black/50"></div>
+
+    {{-- Content --}}
+    <div class="relative z-10 flex h-full flex-col items-center justify-center text-center text-white px-6">
+
+        <h1 class="text-3xl sm:text-5xl font-light tracking-widest uppercase">
+            {{ $album->title }}
+        </h1>
+
+        @if($album->subtitle)
+            <p class="mt-4 text-sm sm:text-lg opacity-80">
+                {{ $album->subtitle }}
+            </p>
+        @endif
+
+        {{-- Scroll Down --}}
+        <a href="#gallery" class="mt-16 animate-bounce text-white/80">
+            ↓
+        </a>
+    </div>
+</section>
+
+{{-- ================= THANK YOU SECTION ================= --}}
+<section class="bg-gray-100 py-16 text-center">
+    <div class="max-w-3xl mx-auto px-6">
+        <h2 class="text-sm tracking-widest uppercase text-gray-800">
+            Thank you for joining us
+        </h2>
+        <p class="mt-4 text-sm text-gray-600">
+            For an evening of refined living and meaningful connection.
+        </p>
+    </div>
+</section>
+
+{{-- ================= GALLERY GRID ================= --}}
+<section id="gallery" class="bg-gray-100 pb-24">
+    <div class="max-w-6xl mx-auto px-6">
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+
+            @forelse($album->photos as $photo)
+                <div class="group relative aspect-square overflow-hidden bg-gray-200">
+
+                    <img src="{{ asset('storage/'.$photo->image_path) }}"
+                         class="h-full w-full object-cover transition duration-500 group-hover:scale-110"
+                         alt="">
+
+                    {{-- Optional caption overlay --}}
+                    @if($photo->caption)
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-end p-4">
+                            <p class="text-xs text-white">
+                                {{ $photo->caption }}
+                            </p>
+                        </div>
+                    @endif
+
+                </div>
+            @empty
+                <div class="col-span-full text-center text-gray-500 py-20">
+                    No photos available.
+                </div>
+            @endforelse
+
+        </div>
+
+    </div>
+</section>
+
+{{-- ================= FOOTER ================= --}}
+<footer class="bg-black text-white py-10">
+    <div class="max-w-6xl mx-auto px-6 text-center text-xs tracking-wide opacity-70">
+        © {{ date('Y') }} {{ config('app.name') }}. All rights reserved.
+    </div>
+</footer>
+
+</body>
+</html>

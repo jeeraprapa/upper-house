@@ -33,4 +33,22 @@
             </main>
         </div>
     </body>
+    @if(session('success'))
+        <div
+            x-data="{ show: true }"
+            x-init="setTimeout(() => show = false, 3000)"
+            x-show="show"
+            x-transition
+            class="fixed top-5 right-5 z-50"
+        >
+            <div class="flex items-center gap-3 rounded-xl bg-green-600 px-6 py-4 text-white shadow-lg">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2"
+                     viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>{{ session('success') }}</span>
+            </div>
+        </div>
+    @endif
 </html>
