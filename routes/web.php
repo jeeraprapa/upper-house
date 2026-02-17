@@ -26,7 +26,7 @@ Route::prefix('admin')->group(function () {
         return redirect()->route('dashboard');
     });
 
-    Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('admin::dashboard');
+    Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
     Route::get('/questionnaires', [App\Http\Controllers\Admin\QuestionnaireController::class, 'index'])->name('admin::questionnaire');
     Route::get('/questionnaires/export', [App\Http\Controllers\Admin\QuestionnaireController::class, 'exportExcel'])->name('admin::questionnaire.export');
