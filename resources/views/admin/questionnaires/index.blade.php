@@ -14,9 +14,9 @@
                     </h2>
 
                     <div class="flex gap-2">
-                        <a href="{{ route('questionnaire.create') }}"
+                        <a href="{{ route('questionnaire.create') }}" target="_blank" 
                            class="rounded-lg bg-gray-900 px-4 py-2 text-sm font-medium text-white hover:bg-gray-800 bg-blue-600">
-                            + Create
+                            + New Questionnaire
                         </a>
                         <a href="{{ route('admin::questionnaire.export') }}"
                            class="rounded-lg bg-gray-900 px-4 py-2 text-sm font-medium text-white hover:bg-gray-800 bg-green-600">

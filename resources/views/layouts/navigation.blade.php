@@ -18,7 +18,7 @@
                     <x-nav-link :href="route('admin::questionnaire')" :active="request()->routeIs('admin::questionnaire')">
                         {{ __('Questionnaire') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('admin::albums.index')" :active="request()->routeIs('admin::questionnaire')">
+                    <x-nav-link :href="route('admin::albums.index')" :active="request()->routeIs('admin::albums.index')">
                         {{ __('Sharing Image') }}
                     </x-nav-link>
                 </div>
