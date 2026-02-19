@@ -26,19 +26,9 @@
     {{-- Content --}}
     <div class="relative z-10 flex h-full flex-col items-center justify-center text-center text-white px-6">
 
-        <h1 class="text-3xl sm:text-5xl font-light tracking-widest uppercase">
-            {{ $album->title }}
-        </h1>
-
-        @if($album->subtitle)
-            <p class="mt-4 text-sm sm:text-lg opacity-80">
-                {{ $album->subtitle }}
-            </p>
-        @endif
-
         {{-- Scroll Down --}}
-        <a href="#gallery" class="mt-16 animate-bounce text-white/80">
-            ↓
+        <a href="#gallery" class="absolute bottom-5 left-1/2 -translate-x-1/2  animate-bounce text-white/80">
+            <img src="{{asset('assets/images/icon-down.svg')}}" alt="icon bounce" class="w-5">
         </a>
     </div>
 </section>
@@ -46,12 +36,12 @@
 {{-- ================= THANK YOU SECTION ================= --}}
 <section class="bg-gray-100 py-16 text-center">
     <div class="max-w-3xl mx-auto px-6">
-        <h2 class="text-sm tracking-widest uppercase text-gray-800">
-            Thank you for joining us
+        <h1 class="text-sm tracking-widest uppercase text-gray-800">
+            {{ $album->title }}
+        </h1>
+        <h2 class="mt-4 text-sm text-gray-600">
+            {{ $album->subtitle }}
         </h2>
-        <p class="mt-4 text-sm text-gray-600">
-            For an evening of refined living and meaningful connection.
-        </p>
     </div>
 </section>
 

@@ -14,7 +14,7 @@
                     </h2>
 
                     <div class="flex gap-2">
-                        <a href="{{ route('questionnaire.create') }}" target="_blank" 
+                        <a href="{{ route('questionnaire.create') }}" target="_blank"
                            class="rounded-lg bg-gray-900 px-4 py-2 text-sm font-medium text-white hover:bg-gray-800 bg-blue-600">
                             + New Questionnaire
                         </a>
