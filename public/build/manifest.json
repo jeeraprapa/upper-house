@@ -1,4 +1,24 @@
 {
+  "node_modules/lightgallery/fonts/lg.svg": {
+    "file": "assets/lg-B0dIV2BS.svg",
+    "src": "node_modules/lightgallery/fonts/lg.svg"
+  },
+  "node_modules/lightgallery/fonts/lg.ttf": {
+    "file": "assets/lg-oyjwlqP2.ttf",
+    "src": "node_modules/lightgallery/fonts/lg.ttf"
+  },
+  "node_modules/lightgallery/fonts/lg.woff": {
+    "file": "assets/lg-CosQH4Cu.woff",
+    "src": "node_modules/lightgallery/fonts/lg.woff"
+  },
+  "node_modules/lightgallery/fonts/lg.woff2": {
+    "file": "assets/lg-C7ze34MH.woff2",
+    "src": "node_modules/lightgallery/fonts/lg.woff2"
+  },
+  "node_modules/lightgallery/images/loading.gif": {
+    "file": "assets/loading-BZOHaeKn.gif",
+    "src": "node_modules/lightgallery/images/loading.gif"
+  },
   "resources/css/app.css": {
     "file": "assets/app-BgryKdOo.css",
     "src": "resources/css/app.css",
@@ -33,9 +53,19 @@
     "src": "resources/font/Belleza-Regular.woff2"
   },
   "resources/js/app.js": {
-    "file": "assets/app-CBbTb_k3.js",
+    "file": "assets/app-CSc37DQq.js",
     "name": "app",
     "src": "resources/js/app.js",
-    "isEntry": true
+    "isEntry": true,
+    "css": [
+      "assets/app-ZNl7Wne2.css"
+    ],
+    "assets": [
+      "assets/lg-C7ze34MH.woff2",
+      "assets/lg-oyjwlqP2.ttf",
+      "assets/lg-CosQH4Cu.woff",
+      "assets/lg-B0dIV2BS.svg",
+      "assets/loading-BZOHaeKn.gif"
+    ]
   }
 }
