@@ -78,3 +78,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 })
+
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text)
+        .then(() => {
+            alert('ลิงก์ถูกคัดลอกไปยังคลิปบอร์ดแล้ว')
+        })
+        .catch(err => {
+            console.error('ไม่สามารถคัดลอกลิงก์ได้:', err)
+            alert('เกิดข้อผิดพลาดในการคัดลอกลิงก์')
+        })
+}
+

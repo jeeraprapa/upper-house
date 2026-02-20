@@ -14,6 +14,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/datenow', function () {
+    echo now();
+});
+
+
 Route::get('/linkstorage', function () {
     Artisan::call('storage:link');
     return 'done';
@@ -24,7 +29,7 @@ Route::get('/questionnaire', [App\Http\Controllers\QuestionnaireController::clas
 //create questionnaire routes
 Route::POST('/questionnaire/store', [App\Http\Controllers\QuestionnaireController::class, 'store'])->name('questionnaire.store');
 
-Route::get('/s/{token}', [PublicShareController::class, 'show'])->name('share.show');
+Route::get('/{slug}/{token}', [PublicShareController::class, 'show'])->name('share.show');
 
 Route::prefix('admin')->group(function () {
     Route::middleware(['auth','verified'])->group(function () {

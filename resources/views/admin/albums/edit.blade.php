@@ -132,7 +132,7 @@
 
                         @forelse($shares as $s)
                             @php
-                                $url = route('share.show', $s->token);
+                                $url = route('share.show', ['slug'=>$album->slug,'token'=>$s->token]);
                                 $active = $s->isActive();
                             @endphp
 
@@ -165,7 +165,7 @@
                                     <div class="flex flex-col gap-2">
                                         <button type="button"
                                                 class="rounded-lg border border-gray-300 bg-white px-3 py-1.5 text-xs font-semibold text-gray-800 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:hover:bg-gray-800"
-                                                @click="copy('{{ $url }}')">
+                                                @click="copyToClipboard('{{ $url }}')">
                                             Copy
                                         </button>
 

@@ -7,9 +7,14 @@ use Illuminate\Http\Request;
 
 class PublicShareController extends Controller
 {
-    public function show(Request $request, string $token)
+    public function show(Request $request,string $slug, string $token)
     {
         $share = AlbumShare::where('token', $token)->firstOrFail();
+
+        //check slug
+        if ($share->album->slug !== $slug) {
+            abort(404);
+        }
 
         abort_unless($share->isActive(), 403);
 
