@@ -42,6 +42,14 @@
                     @error('hero_image')<p class="mt-1 text-xs text-red-600">{{ $message }}</p>@enderror
                 </div>
 
+                <div class="pb-3">
+                    <label class="block text-xs font-semibold text-gray-700 dark:text-gray-300">Mobile HERO IMAGE</label>
+                    <input type="file" name="mb_hero_image" accept="image/*"
+                           class="mt-1 block w-full text-sm text-gray-700 file:mr-4 file:rounded-xl file:border-0 file:bg-gray-900 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white hover:file:bg-gray-800
+                              dark:text-gray-200 dark:file:bg-white dark:file:text-gray-900 dark:hover:file:bg-gray-200">
+                    @error('mb_hero_image')<p class="mt-1 text-xs text-red-600">{{ $message }}</p>@enderror
+                </div>
+
                 <label class="flex items-center gap-3">
                     <input type="checkbox" name="is_published" value="1" class="h-4 w-4 rounded border-gray-300 text-gray-900 focus:ring-gray-900 dark:border-gray-700">
                     <span class="text-sm text-gray-800 dark:text-gray-200">Publish now</span>

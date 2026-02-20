@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('subtitle')->nullable();
 
             $table->string('hero_image')->nullable(); // storage path
+            $table->string('mb_hero_image')->nullable(); // storage path
             $table->boolean('is_published')->default(false);
             $table->timestamp('published_at')->nullable();
 

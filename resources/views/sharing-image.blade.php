@@ -17,12 +17,21 @@
     {{-- Background --}}
     @if($album->hero_image)
         <img src="{{ asset('storage/'.$album->hero_image) }}"
-             class="absolute inset-0 h-full w-full object-cover"
+             class="absolute inset-0 h-full w-full object-cover hidden md:block"
              alt="">
     @endif
 
-    {{-- Dark overlay --}}
-{{--    <div class="absolute inset-0 bg-black/50"></div>--}}
+    @if($album->mb_hero_image)
+        <img src="{{ asset('storage/'.$album->mb_hero_image) }}"
+             class="absolute inset-0 h-full w-full object-cover block md:hidden"
+             alt="">
+    @else
+        {{-- Fallback to hero_image if mb_hero_image is not set --}}
+        <img src="{{ asset('storage/'.$album->hero_image) }}"
+             class="absolute inset-0 h-full w-full object-cover block md:hidden"
+             alt="">
+    @endif
+
 
     {{-- Content --}}
     <div class="relative z-10 flex h-full flex-col items-center justify-center text-center text-white px-6">
