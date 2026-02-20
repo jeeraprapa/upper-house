@@ -20,7 +20,7 @@
     "src": "node_modules/lightgallery/images/loading.gif"
   },
   "resources/css/app.css": {
-    "file": "assets/app-BcZgVZ-Y.css",
+    "file": "assets/app-Ca1LT-Ei.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -51,6 +51,10 @@
   "resources/font/Belleza-Regular.woff2": {
     "file": "assets/Belleza-Regular-Dlj8cG_T.woff2",
     "src": "resources/font/Belleza-Regular.woff2"
+  },
+  "resources/image/footer.webp": {
+    "file": "assets/footer-BsARmkSw.webp",
+    "src": "resources/image/footer.webp"
   },
   "resources/js/app.js": {
     "file": "assets/app-CSc37DQq.js",

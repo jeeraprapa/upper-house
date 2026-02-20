@@ -118,3 +118,9 @@ body {
     object-fit: contain;
     max-height: 500px;
 }
+
+footer{
+    background-image: url("../image/footer.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+}

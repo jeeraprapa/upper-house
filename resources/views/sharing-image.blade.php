@@ -21,7 +21,8 @@
              alt="">
     @endif
 
-
+    {{-- Dark overlay --}}
+{{--    <div class="absolute inset-0 bg-black/50"></div>--}}
 
     {{-- Content --}}
     <div class="relative z-10 flex h-full flex-col items-center justify-center text-center text-white px-6">
@@ -92,9 +93,55 @@
 </section>
 
 {{-- ================= FOOTER ================= --}}
-<footer class="bg-black text-white py-10">
-    <div class="max-w-6xl mx-auto px-6 text-center text-xs tracking-wide opacity-70">
-        © {{ date('Y') }} {{ config('app.name') }}. All rights reserved.
+<footer class="relative bg-black text-white pt-4">
+
+    <div class="absolute inset-0 bg-black/50 z-10"></div>
+
+    <div class="relative max-w-full mx-auto px-6 z-50">
+
+        {{-- Top Section --}}
+        <div class="flex flex-col lg:flex-row lg:justify-between gap-10 pb-8 ">
+
+            {{-- Company Info --}}
+            <div class="space-y-1">
+                <p class="text-sm font-semibold tracking-wide">
+                    CITY DYNAMIC CO., LTD.
+                </p>
+
+                <span class="block whitespace-pre-line text-sm text-white/80 leading-relaxed text-xs">
+Unit 6A, 6/F, 140 Wireless Building,
+140 Wireless Road, Lumphini, Pathumwan,
+Bangkok 10330, Thailand
+                </span>
+
+                <span class="block text-sm text-white/80">
+                    Email: enquiry@uhresidencesbangkok.com
+                </span>
+            </div>
+
+            {{-- Partnership --}}
+            <div class="flex flex-col items-start lg:items-end">
+                <p class="text-xs tracking-widest uppercase text-white">
+                    A CREATIVE PARTNERSHIP BY
+                </p>
+
+                <div class="flex items-center gap-6 pt-6">
+                    <img
+                        class="w-32"
+                        src="https://www.uhresidencesbangkok.com/wp-content/themes/citydynamic_theme/assets/image/ic-partner-1.png"
+                        alt="Partner 1"
+                    >
+
+                    <img
+                        class="w-32"
+                        src="https://www.uhresidencesbangkok.com/wp-content/themes/citydynamic_theme/assets/image/ic-partner-2.png"
+                        alt="Partner 2"
+                    >
+                </div>
+            </div>
+
+        </div>
+
     </div>
 </footer>
 
