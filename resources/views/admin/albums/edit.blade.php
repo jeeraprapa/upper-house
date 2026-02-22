@@ -132,7 +132,11 @@
 
                         @forelse($shares as $s)
                             @php
-                                $url = route('share.show', ['slug'=>$album->slug,'token'=>$s->token]);
+                                if(app()->environment('local')){
+                                    $url = route('share.show', ['slug'=>$album->slug,'token'=>$s->token]);
+                                }else{
+                                    $url = "https://imagesharing.uhresidencesbangkok.com/$album->slug/$s->token";
+                                }
                                 $active = $s->isActive();
                             @endphp
 
@@ -163,11 +167,11 @@
                                     </div>
 
                                     <div class="flex flex-col gap-2">
-                                        <button type="button"
-                                                class="rounded-lg border border-gray-300 bg-white px-3 py-1.5 text-xs font-semibold text-gray-800 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:hover:bg-gray-800"
-                                                @click="copyToClipboard('{{ $url }}')">
-                                            Copy
-                                        </button>
+{{--                                        <button type="button"--}}
+{{--                                                class="rounded-lg border border-gray-300 bg-white px-3 py-1.5 text-xs font-semibold text-gray-800 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:hover:bg-gray-800"--}}
+{{--                                                @click="copyToClipboard('{{ $url }}')">--}}
+{{--                                            Copy--}}
+{{--                                        </button>--}}
 
                                         @if($active)
                                             <form method="POST" action="{{ route('admin::shares.revoke',$s) }}">
@@ -176,13 +180,13 @@
                                                     Revoke
                                                 </button>
                                             </form>
-                                        @else
-                                            <form method="POST" action="{{ route('admin::shares.restore',$s) }}">
-                                                @csrf @method('PATCH')
-                                                <button class="w-full rounded-lg bg-gray-900 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200">
-                                                    Restore
-                                                </button>
-                                            </form>
+{{--                                        @else--}}
+{{--                                            <form method="POST" action="{{ route('admin::shares.restore',$s) }}">--}}
+{{--                                                @csrf @method('PATCH')--}}
+{{--                                                <button class="w-full rounded-lg bg-gray-900 px-3 py-1.5 text-xs font-semibold text-white hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200">--}}
+{{--                                                    Restore--}}
+{{--                                                </button>--}}
+{{--                                            </form>--}}
                                         @endif
 
                                         <form method="POST" action="{{ route('admin::shares.destroy',$s) }}" onsubmit="return confirm('Delete this share link?')">

@@ -11,8 +11,18 @@ class PublicShareController extends Controller
     {
         $share = AlbumShare::where('token', $token)->firstOrFail();
 
+        //check album
+        if (!$share->album) {
+            abort(404);
+        }
+
         //check slug
         if ($share->album->slug !== $slug) {
+            abort(404);
+        }
+
+        //check is_published
+        if(!$share->album->is_published){
             abort(404);
         }
 

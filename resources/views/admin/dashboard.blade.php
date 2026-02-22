@@ -8,28 +8,28 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             {{-- Quick panel --}}
-            <div class="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-black/5 dark:bg-gray-900 dark:ring-white/10 mb-6">
-                <div class="text-sm font-semibold text-gray-900 dark:text-white">Quick actions</div>
-                <div class="mt-4 space-y-3">
-                    <a href="{{ route('admin::questionnaire') }}"
-                       class="block rounded-xl border border-gray-200 p-4 hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800/40">
-                        <div class="text-sm font-semibold text-gray-900 dark:text-white">Manage questionnaires</div>
-                        <div class="text-xs text-gray-500 dark:text-gray-400">Search, view, export</div>
-                    </a>
+{{--            <div class="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-black/5 dark:bg-gray-900 dark:ring-white/10 mb-6">--}}
+{{--                <div class="text-sm font-semibold text-gray-900 dark:text-white">Quick actions</div>--}}
+{{--                <div class="mt-4 space-y-3">--}}
+{{--                    <a href="{{ route('admin::questionnaire') }}"--}}
+{{--                       class="block rounded-xl border border-gray-200 p-4 hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800/40">--}}
+{{--                        <div class="text-sm font-semibold text-gray-900 dark:text-white">Manage questionnaires</div>--}}
+{{--                        <div class="text-xs text-gray-500 dark:text-gray-400">Search, view, export</div>--}}
+{{--                    </a>--}}
 
-                    <a href="{{ route('questionnaire.create') }}"
-                       class="block rounded-xl border border-gray-200 p-4 hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800/40">
-                        <div class="text-sm font-semibold text-gray-900 dark:text-white">Create new entry</div>
-                        <div class="text-xs text-gray-500 dark:text-gray-400">Manual registration</div>
-                    </a>
+{{--                    <a href="{{ route('questionnaire.create') }}"--}}
+{{--                       class="block rounded-xl border border-gray-200 p-4 hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800/40">--}}
+{{--                        <div class="text-sm font-semibold text-gray-900 dark:text-white">Create new entry</div>--}}
+{{--                        <div class="text-xs text-gray-500 dark:text-gray-400">Manual registration</div>--}}
+{{--                    </a>--}}
 
-                    <a href="{{ route('profile.edit') }}"
-                       class="block rounded-xl border border-gray-200 p-4 hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800/40">
-                        <div class="text-sm font-semibold text-gray-900 dark:text-white">Profile & security</div>
-                        <div class="text-xs text-gray-500 dark:text-gray-400">Change password, etc.</div>
-                    </a>
-                </div>
-            </div>
+{{--                    <a href="{{ route('profile.edit') }}"--}}
+{{--                       class="block rounded-xl border border-gray-200 p-4 hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-gray-800/40">--}}
+{{--                        <div class="text-sm font-semibold text-gray-900 dark:text-white">Profile & security</div>--}}
+{{--                        <div class="text-xs text-gray-500 dark:text-gray-400">Change password, etc.</div>--}}
+{{--                    </a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">

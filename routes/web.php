@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\Admin\AlbumController;
 use App\Http\Controllers\Admin\AlbumShareController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PhotoController;
+use App\Http\Controllers\Admin\QuestionnaireController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PublicShareController;
 use Illuminate\Support\Facades\Artisan;
@@ -24,12 +26,6 @@ Route::get('/linkstorage', function () {
     return 'done';
 });
 
-Route::get('/questionnaire', [App\Http\Controllers\QuestionnaireController::class, 'create'])->name('questionnaire.create');
-
-//create questionnaire routes
-Route::POST('/questionnaire/store', [App\Http\Controllers\QuestionnaireController::class, 'store'])->name('questionnaire.store');
-
-Route::get('/{slug}/{token}', [PublicShareController::class, 'show'])->name('share.show');
 
 Route::prefix('admin')->group(function () {
     Route::middleware(['auth','verified'])->group(function () {
@@ -38,10 +34,10 @@ Route::prefix('admin')->group(function () {
             return redirect()->route('dashboard');
         });
 
-        Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-        Route::get('/questionnaires', [App\Http\Controllers\Admin\QuestionnaireController::class, 'index'])->name('admin::questionnaire');
-        Route::get('/questionnaires/export', [App\Http\Controllers\Admin\QuestionnaireController::class, 'exportExcel'])->name('admin::questionnaire.export');
+        Route::get('/questionnaires', [QuestionnaireController::class, 'index'])->name('admin::questionnaire');
+        Route::get('/questionnaires/export', [QuestionnaireController::class, 'exportExcel'])->name('admin::questionnaire.export');
 
         Route::name('admin::')->group(function () {
             Route::resource('albums', AlbumController::class)
@@ -67,4 +63,13 @@ Route::prefix('admin')->group(function () {
 
     require __DIR__.'/auth.php';
 });
+
+
+Route::get('/questionnaire', [App\Http\Controllers\QuestionnaireController::class, 'create'])->name('questionnaire.create');
+
+//create questionnaire routes
+Route::POST('/questionnaire/store', [App\Http\Controllers\QuestionnaireController::class, 'store'])->name('questionnaire.store');
+
+
+Route::get('/{slug}/{token}', [PublicShareController::class, 'show'])->name('share.show');
 

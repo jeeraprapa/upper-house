@@ -23,8 +23,13 @@ class AlbumShareController extends Controller
             'token' => Str::random(48), // ยาวพอเดาไม่ได้
             'created_by' => auth()->id(),
         ]);
+        if(app()->environment('local')){
+            $url = route('share.show', ['slug'=>$album->slug,'token'=>$share->token]);
+        }else{
+            $url = "https://imagesharing.uhresidencesbangkok.com/$album->slug/$share->token";
+        }
 
-        return back()->with('success', 'Created share link: '.route('share.show', $share->token));
+        return back()->with('success', 'Created share link: '.$url);
     }
 
     public function revoke(AlbumShare $share)
