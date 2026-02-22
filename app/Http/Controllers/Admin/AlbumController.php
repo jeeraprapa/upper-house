@@ -34,7 +34,7 @@ class AlbumController extends Controller
     {
         $data = $request->validate([
             'title' => ['required','string','max:255'],
-            'slug' => ['nullable','string','max:255', 'unique:albums,slug'],
+            'slug' => ['required','string','max:255', 'unique:albums,slug'],
             'subtitle' => ['nullable','string','max:255'],
             'hero_image' => ['nullable','image','max:10240'], // 5MB
             'mb_hero_image' => ['nullable','image','max:10240'], // 5MB
@@ -84,7 +84,7 @@ class AlbumController extends Controller
     {
         $data = $request->validate([
             'title' => ['required','string','max:255'],
-            'slug' => ['nullable','string','max:255', Rule::unique('albums','slug')->ignore($album->id)],
+            'slug' => ['required','string','max:255', Rule::unique('albums','slug')->ignore($album->id)],
             'subtitle' => ['nullable','string','max:255'],
             'hero_image' => ['nullable','image','max:10240'],
             'mb_hero_image' => ['nullable','image','max:10240'],

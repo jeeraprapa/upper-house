@@ -15,16 +15,15 @@
             <div class="space-y-5">
                 <div class="pb-3">
                     <label class="block text-xs font-semibold text-gray-700 dark:text-gray-300">TITLE</label>
-                    <input name="title" value="{{ old('title') }}"
+                    <input id="title" name="title" value="{{ old('title') }}" oninput="setSlug()"
                            class="mt-1 w-full rounded-xl border-gray-300 focus:border-gray-900 focus:ring-gray-900 dark:border-gray-700 dark:bg-gray-950 dark:text-white">
                     @error('title')<p class="mt-1 text-xs text-red-600">{{ $message }}</p>@enderror
                 </div>
 
                 <div class="pb-3">
                     <label class="block text-xs font-semibold text-gray-700 dark:text-gray-300">SLUG (optional)</label>
-                    <input name="slug" value="{{ old('slug') }}"
+                    <input id="slug" name="slug" value="{{ old('slug') }}"
                            class="mt-1 w-full rounded-xl border-gray-300 focus:border-gray-900 focus:ring-gray-900 dark:border-gray-700 dark:bg-gray-950 dark:text-white">
-                    <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">If empty, auto-generate from title.</p>
                     @error('slug')<p class="mt-1 text-xs text-red-600">{{ $message }}</p>@enderror
                 </div>
 
@@ -68,4 +67,23 @@
         </form>
 
     </div>
+    <script>
+
+
+        function setSlug() {
+            const nameInput = document.getElementById('title')
+            const slugInput = document.getElementById('slug')
+
+            if (!nameInput || !slugInput) return
+
+            nameInput.addEventListener('input', () => {
+                const slug = nameInput.value
+                    .toLowerCase()
+                    .trim()
+                    .replace(/[^a-z0-9]+/g, '-') // แทนที่อักขระที่ไม่ใช่ตัวอักษรหรือตัวเลขด้วย "-"
+                    .replace(/^-+|-+$/g, '') // ลบ "-" ที่ขึ้นต้นหรือสิ้นสุด
+                slugInput.value = slug
+            })
+        }
+    </script>
 </x-app-layout>
