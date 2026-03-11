@@ -38,6 +38,10 @@ document.addEventListener('DOMContentLoaded', () => {
         appendSubHtmlTo: '.lg-sub-html',
 
         addClass: 'lg-event-theme',
+        mobileSettings: {
+            controls: true,
+            showCloseIcon: true
+        }
     })
 
     // ดักคลิกปุ่มใน caption (เพราะปุ่มอยู่ใน overlay)

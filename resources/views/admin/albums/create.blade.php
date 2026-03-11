@@ -34,7 +34,7 @@
                 </div>
 
                 <div class="pb-3">
-                    <label class="block text-xs font-semibold text-gray-700 dark:text-gray-300">HERO IMAGE</label>
+                    <label class="block text-xs font-semibold text-gray-700 dark:text-gray-300">HERO IMAGE <small>Recommended dimensions: 3840 × 2160 pixels (Maximum 10 Mb.)</small></label>
                     <input type="file" name="hero_image" accept="image/*"
                            class="mt-1 block w-full text-sm text-gray-700 file:mr-4 file:rounded-xl file:border-0 file:bg-gray-900 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white hover:file:bg-gray-800
                               dark:text-gray-200 dark:file:bg-white dark:file:text-gray-900 dark:hover:file:bg-gray-200">
@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="pb-3">
-                    <label class="block text-xs font-semibold text-gray-700 dark:text-gray-300">Mobile HERO IMAGE</label>
+                    <label class="block text-xs font-semibold text-gray-700 dark:text-gray-300">Mobile HERO IMAGE <small>Recommended dimensions: 640 × 960 pixels (Maximum 10 Mb.)</small></label>
                     <input type="file" name="mb_hero_image" accept="image/*"
                            class="mt-1 block w-full text-sm text-gray-700 file:mr-4 file:rounded-xl file:border-0 file:bg-gray-900 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white hover:file:bg-gray-800
                               dark:text-gray-200 dark:file:bg-white dark:file:text-gray-900 dark:hover:file:bg-gray-200">

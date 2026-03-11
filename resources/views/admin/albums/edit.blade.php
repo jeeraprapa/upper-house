@@ -45,7 +45,7 @@
                         </div>
 
                         <div class="pb-3">
-                            <label class="block text-xs font-semibold text-gray-700 dark:text-gray-300">HERO IMAGE</label>
+                            <label class="block text-xs font-semibold text-gray-700 dark:text-gray-300">HERO IMAGE <small>Recommended dimensions: 3840 × 2160 pixels (Maximum 10 Mb.)</small></label>
 
                             @if($album->hero_image)
                                 <img class="mt-2 w-full rounded-xl object-cover ring-1 ring-black/10 dark:ring-white/10"
@@ -61,7 +61,7 @@
                         </div>
 
                         <div class="pb-3">
-                            <label class="block text-xs font-semibold text-gray-700 dark:text-gray-300">Mobile HERO IMAGE</label>
+                            <label class="block text-xs font-semibold text-gray-700 dark:text-gray-300">Mobile HERO <small>IMAGE Recommended dimensions: 640 × 960 pixels (Maximum 10 Mb.)</small></label>
 
                             @if($album->mb_hero_image)
                                 <img class="mt-2 w-full rounded-xl object-cover ring-1 ring-black/10 dark:ring-white/10"
@@ -211,7 +211,7 @@
                 <div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5 dark:bg-gray-900 dark:ring-white/10">
                     <div class="flex items-center justify-between">
                         <div>
-                            <div class="text-sm font-semibold text-gray-900 dark:text-white">Photos</div>
+                            <div class="text-sm font-semibold text-gray-900 dark:text-white">Photos (Maximum file size: 8 MB per image)</div>
                             <div class="text-xs text-gray-500 dark:text-gray-400">Upload multiple images, manage caption/sort/publish</div>
                         </div>
                     </div>

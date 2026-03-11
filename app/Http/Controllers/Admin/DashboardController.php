@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Questionnaire;
+use App\Models\Album;
 use Illuminate\Support\Carbon;
 
 class DashboardController extends Controller
@@ -14,16 +14,15 @@ class DashboardController extends Controller
         $month = now()->startOfMonth();
 
         $stats = [
-            'total' => Questionnaire::count(),
-            'today' => Questionnaire::where('created_at', '>=', $today)->count(),
-            'month' => Questionnaire::where('created_at', '>=', $month)->count(),
-            'with_email' => Questionnaire::whereNotNull('email')->where('email', '!=', '')->count(),
+            'total' => Album::count(),
+            'today' => Album::where('created_at', '>=', $today)->count(),
+            'month' => Album::where('created_at', '>=', $month)->count()
         ];
 
-        $recent = Questionnaire::latest()->limit(10)->get();
+        $recent = Album::latest()->limit(10)->get();
 
         // กราฟ 7 วันล่าสุด (เอาไปใช้ทำ chart ได้)
-        $daily = Questionnaire::query()
+        $daily = Album::query()
                               ->where('created_at', '>=', now()->subDays(6)->startOfDay())
                               ->selectRaw('DATE(created_at) as d, COUNT(*) as c')
                               ->groupBy('d')
