@@ -45,6 +45,21 @@
                         </div>
 
                         <div class="pb-3">
+                            <label class="block text-xs font-semibold text-gray-700 dark:text-gray-300">IMAGE MODAL HEADER</label>
+                            <input name="image_header" value="{{ old('image_header',$album->image_header) }}"
+                                   class="mt-1 w-full rounded-xl border-gray-300 focus:border-gray-900 focus:ring-gray-900 dark:border-gray-700 dark:bg-gray-950 dark:text-white">
+                            @error('image_header')<p class="mt-1 text-xs text-red-600">{{ $message }}</p>@enderror
+                        </div>
+
+                        <div class="pb-3">
+                            <label class="block text-xs font-semibold text-gray-700 dark:text-gray-300">IMAGE MODAL SHORT DESCRIPTION
+                            </label>
+                            <input name="image_description" value="{{ old('image_description',$album->image_description) }}"
+                                   class="mt-1 w-full rounded-xl border-gray-300 focus:border-gray-900 focus:ring-gray-900 dark:border-gray-700 dark:bg-gray-950 dark:text-white">
+                            @error('image_description')<p class="mt-1 text-xs text-red-600">{{ $message }}</p>@enderror
+                        </div>
+
+                        <div class="pb-3">
                             <label class="block text-xs font-semibold text-gray-700 dark:text-gray-300">HERO IMAGE <small>Recommended dimensions: 3840 × 2160 pixels (Maximum 10 Mb.)</small></label>
 
                             @if($album->hero_image)
@@ -76,6 +91,14 @@
                             @enderror
                         </div>
 
+                        <div class="pb-3">
+                            <label class="block text-xs font-semibold text-gray-700 dark:text-gray-300">EXPIRE AT
+                            </label>
+                            <input name="expires_at" value="{{ old('expires_at',optional($album->expires_at)->format('Y-m-d')) }}" type="date"
+                                   class="mt-1 w-full rounded-xl border-gray-300 focus:border-gray-900 focus:ring-gray-900 dark:border-gray-700 dark:bg-gray-950 dark:text-white">
+                            @error('expires_at')<p class="mt-1 text-xs text-red-600">{{ $message }}</p>@enderror
+                        </div>
+
                         <label class="flex items-center gap-3">
                             <input type="checkbox" name="is_published" value="1"
                                    class="h-4 w-4 rounded border-gray-300 text-gray-900 focus:ring-gray-900 dark:border-gray-700"
@@ -84,13 +107,7 @@
                         </label>
 
                         <div class="flex items-center justify-between">
-{{--                            <a class="text-sm font-semibold text-gray-700 hover:underline dark:text-gray-200"--}}
-{{--                               href="{{ route('share.show', optional($album->shares()->latest()->first())->token ?? 'x') }}"--}}
-{{--                               onclick="return false;">--}}
-{{--                                Public URL: /s/{token}--}}
-{{--                            </a>--}}
-
-                            <button class="rounded-xl bg-gray-900 px-4 py-2 text-sm font-semibold text-white hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200">
+                            <button class="rounded-xl bg-green-800 px-4 py-2 text-sm font-semibold text-white hover:bg-green-500 dark:bg-white dark:text-gray-900 dark:hover:bg-green-200">
                                 Save
                             </button>
                         </div>
@@ -98,7 +115,7 @@
                 </div>
 
                 {{-- Share Links --}}
-                <div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5 dark:bg-gray-900 dark:ring-white/10">
+                <div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5 dark:bg-gray-900 dark:ring-white/10 hidden">
                     <div class="flex items-center justify-between">
                         <div class="text-sm font-semibold text-gray-900 dark:text-white">Share links</div>
                         <div class="text-xs text-gray-500 dark:text-gray-400">No-login / revoke / view count</div>
@@ -207,6 +224,27 @@
 
             {{-- Right: Photos --}}
             <div class="lg:col-span-2 space-y-6">
+                {{-- Display Link --}}
+                <div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5 dark:bg-gray-900 dark:ring-white/10">
+                    <div>
+                        <div class="text-sm font-semibold text-gray-900 dark:text-white">Public URL</div>
+                        <a href="{{ route('share.index', $album->slug) }}"
+                           class="mt-2 inline-block text-sm text-gray-700 hover:underline dark:text-gray-200"
+                           target="_blank">
+                            https://imagesharing.uhresidencesbangkok.com/{{$album->slug}}
+                        </a>
+                    </div>
+                    <div>
+                        <div class="mt-4 flex items-center gap-3 text-xs text-gray-600 dark:text-gray-300">
+                            <span>Total photos: <b>{{ $album->photos->count() }}</b></span>
+                            <span>Views: <b>{{ number_format($album->view_count) }}</b></span>
+                            <span>Created: {{ $album->created_at->format('d/m/Y H:i') }}</span>
+                            <span>Last updated: {{ optional($album->updated_at)->format('d/m/Y H:i') ?? '-' }}</span>
+                            <span>Last views: {{ optional($album->last_viewed_at)->format('d/m/Y H:i') ?? '-' }}</span>
+                        </div>
+                    </div>
+                </div>
+
                 {{-- Upload photos --}}
                 <div class="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5 dark:bg-gray-900 dark:ring-white/10">
                     <div class="flex items-center justify-between">

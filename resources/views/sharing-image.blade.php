@@ -66,8 +66,8 @@
                    class="gallery-item group relative aspect-square overflow-hidden bg-gray-200"
                    data-sub-html='
                     <div class="lg-event-caption">
-                      <div class="lg-event-title">YOUR PRESENCE MADE THE EVENING SPECIAL</div>
-                      <div class="lg-event-sub">We hope this moment stays with you.</div>
+                      <div class="lg-event-title">{{ $album->image_header }}</div>
+                      <div class="lg-event-sub">{{ $album->image_description }}</div>
 
                       <div class="lg-event-actions">
                         <button class="lg-btn-one" data-action="save-one" data-id="{{ $photo->id }}">SAVE THIS ONE</button>
@@ -118,9 +118,9 @@
                 </p>
 
                 <span class="block whitespace-pre-line text-sm text-white/80 leading-relaxed text-xs">
-Unit 6A, 6/F, 140 Wireless Building,
-140 Wireless Road, Lumphini, Pathumwan,
-Bangkok 10330, Thailand
+                    Unit 6A, 6/F, 140 Wireless Building,
+                    140 Wireless Road, Lumphini, Pathumwan,
+                    Bangkok 10330, Thailand
                 </span>
 
                 <span class="block text-sm text-white/80">

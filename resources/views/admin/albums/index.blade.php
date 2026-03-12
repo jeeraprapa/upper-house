@@ -30,7 +30,7 @@
                         <thead class="bg-gray-50 dark:bg-gray-950">
                         <tr>
                             <th class="px-5 py-3 text-left font-semibold text-gray-600 dark:text-gray-300">Title</th>
-                            <th class="px-5 py-3 text-left font-semibold text-gray-600 dark:text-gray-300">Slug</th>
+                            <th class="px-5 py-3 text-left font-semibold text-gray-600 dark:text-gray-300">Expire</th>
                             <th class="px-5 py-3 text-left font-semibold text-gray-600 dark:text-gray-300">Status</th>
                             <th class="px-5 py-3 text-left font-semibold text-gray-600 dark:text-gray-300">Created</th>
                             <th class="px-5 py-3 text-right font-semibold text-gray-600 dark:text-gray-300">Action</th>
@@ -40,7 +40,7 @@
                         @forelse($albums as $a)
                             <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/40">
                                 <td class="px-5 py-3 font-medium text-gray-900 dark:text-white">{{ $a->title }}</td>
-                                <td class="px-5 py-3 text-gray-600 dark:text-gray-300">{{ $a->slug }}</td>
+                                <td class="px-5 py-3 text-gray-600 dark:text-gray-300">{{ optional($a->expires_at)->format('Y-m-d') }}</td>
                                 <td class="px-5 py-3">
                                     @if($a->is_published)
                                         <span class="inline-flex items-center rounded-full bg-green-100 px-2.5 py-1 text-xs font-semibold text-green-700 ring-1 ring-green-200 dark:bg-green-900/30 dark:text-green-200 dark:ring-green-900/40">

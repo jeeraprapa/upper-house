@@ -35,10 +35,13 @@ class AlbumController extends Controller
         $data = $request->validate([
             'title' => ['required','string','max:255'],
             'slug' => ['required','string','max:255', 'unique:albums,slug'],
-            'subtitle' => ['nullable','string','max:255'],
+            'image_header' => ['required','string','max:255'],
+            'image_description' => ['required','string','max:500'],
+            'subtitle' => ['nullable','string'],
             'hero_image' => ['nullable','image','max:10240'], // 5MB
             'mb_hero_image' => ['nullable','image','max:10240'], // 5MB
             'is_published' => ['nullable','boolean'],
+            'expires_at' => ['nullable','date','after:today()']
         ]);
 
         $data['slug'] = $data['slug'] ?: Str::slug($data['title']);
@@ -85,10 +88,13 @@ class AlbumController extends Controller
         $data = $request->validate([
             'title' => ['required','string','max:255'],
             'slug' => ['required','string','max:255', Rule::unique('albums','slug')->ignore($album->id)],
-            'subtitle' => ['nullable','string','max:255'],
+            'subtitle' => ['nullable','string'],
+            'image_header' => ['required','string','max:255'],
+            'image_description' => ['required','string','max:500'],
             'hero_image' => ['nullable','image','max:10240'],
             'mb_hero_image' => ['nullable','image','max:10240'],
             'is_published' => ['nullable','boolean'],
+            'expires_at' => ['nullable','date','after:today()']
         ]);
 
         $data['slug'] = $data['slug'] ?: Str::slug($data['title']);

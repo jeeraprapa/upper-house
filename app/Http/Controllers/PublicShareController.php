@@ -2,11 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Album;
 use App\Models\AlbumShare;
 use Illuminate\Http\Request;
 
 class PublicShareController extends Controller
 {
+    public function index(string $slug){
+        //ค้นหา share ที่ active และ album slug ตรงกัน
+        $album = Album::where('slug', $slug)
+                      ->where('is_published', true)
+                      ->where(fn($q) => $q->whereNull('expires_at')->orWhere('expires_at', '>=', now()->toDateString()))
+                      ->firstOrFail();
+
+        // นับทุกครั้งที่เข้า (atomic)
+        $album->increment('view_count');
+        $album->forceFill(['last_viewed_at' => now()])->save();
+
+        return view('sharing-image', compact('album'));
+    }
     public function show(Request $request,string $slug, string $token)
     {
         $share = AlbumShare::where('token', $token)->firstOrFail();

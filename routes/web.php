@@ -71,5 +71,6 @@ Route::get('/questionnaire', [App\Http\Controllers\QuestionnaireController::clas
 Route::POST('/questionnaire/store', [App\Http\Controllers\QuestionnaireController::class, 'store'])->name('questionnaire.store');
 
 
+Route::get('/{slug}', [PublicShareController::class, 'index'])->name('share.index');
 Route::get('/{slug}/{token}', [PublicShareController::class, 'show'])->name('share.show');
 
