@@ -104,37 +104,44 @@
 {{-- ================= FOOTER ================= --}}
 <footer class="relative bg-black text-white pt-4">
 
-    <div class="absolute inset-0 bg-black/50 z-10"></div>
+    <div class="absolute inset-0 bg-black/70 z-10"></div>
 
     <div class="relative max-w-full mx-auto px-6 z-50">
 
         {{-- Top Section --}}
-        <div class="flex flex-col lg:flex-row lg:justify-between gap-10 pb-8 ">
+        <div class="flex flex-col lg:flex-row lg:justify-between gap-10">
 
             {{-- Company Info --}}
-            <div class="space-y-1">
-                <p class="text-sm font-semibold tracking-wide">
+            <div class="order-2 md:order-1 text-center md:text-left space-y-1 md:ml-8 my-6">
+                <p class="text-xs font-extralight tracking-wide">
                     CITY DYNAMIC CO., LTD.
                 </p>
 
-                <span class="block whitespace-pre-line text-sm text-white/80 leading-relaxed text-xs">
+                <span class="block whitespace-pre-line text-sm text-white/80 leading-relaxed text-xs leading-tight">
                     Unit 6A, 6/F, 140 Wireless Building,
                     140 Wireless Road, Lumphini, Pathumwan,
                     Bangkok 10330, Thailand
                 </span>
 
-                <span class="block text-sm text-white/80">
+                <span class="block text-xs text-white/80 !mt-3">
                     Email: enquiry@uhresidencesbangkok.com
                 </span>
+
+                <div class="!mt-6 flex flex-wrap gap-6 text-[10px] md:text-xs justify-center md:justify-end">
+                    <a href="https://www.uhresidencesbangkok.com/privacy-policy/" target="_blank" class="underline">Privacy Policy</a>
+                    <a href="https://www.uhresidencesbangkok.com/terms-and-conditions/" target="_blank" class="underline">Terms and Conditions</a>
+                    <a href="https://www.uhresidencesbangkok.com/disclaimer/" target="_blank" class="underline">Disclaimer</a>
+                </div>
             </div>
 
             {{-- Partnership --}}
-            <div class="flex flex-col items-start lg:items-end">
+            <div class="order-1 md:order-2 text-center space-y-4 !mt-5 !mx-8">
+
                 <p class="text-xs tracking-widest uppercase text-white">
                     A CREATIVE PARTNERSHIP BY
                 </p>
 
-                <div class="flex items-center gap-6 pt-6">
+                <div class="flex items-center justify-center md:justify-end gap-6">
                     <img
                         class="w-32"
                         src="https://www.uhresidencesbangkok.com/wp-content/themes/citydynamic_theme/assets/image/ic-partner-1.png"
